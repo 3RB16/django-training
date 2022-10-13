@@ -40,7 +40,7 @@ Go to the project directory
   cd django-training
 ```
 
-Acitve Vrtual Enviorentment
+Acitve Virtual Enviorentment
 
 ```bash
   env/Scripts/acitve
