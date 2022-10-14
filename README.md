@@ -14,9 +14,9 @@ install Python
 ```
     
 ## Run Locally
-
-Download ZIP django-training-Task-1-Create-artist-model-and-album-model
-
+```bash
+ Download ZIP django-training-Task-1-Create-artist-model-and-album-model
+```
 Go to the project directory
 
 ```bash
