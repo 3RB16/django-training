@@ -27,8 +27,9 @@ Go to the project directory
   cd django-training
 ```
 install Virtual Enviorentment
+
 ```bash
-  pip -m venv env
+  python -m venv env
 ```
 
 Acitve Virtual Enviorentment
