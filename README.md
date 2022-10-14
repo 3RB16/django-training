@@ -18,7 +18,7 @@ install Python
 Clone django-training
 
 ```bash
-  git clone https://github.com/3RB16/django-training.git
+  git clone https://github.com/3RB16/django-training-Task-1-Create-artist-model-and-album-model.git
 ```
 
 Go to the project directory
