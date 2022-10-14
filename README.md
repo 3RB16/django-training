@@ -11,19 +11,6 @@ install Python
 ```bash
   For windows - Download latest version from the official website: 
     https://www.python.org/downloads/
-
-  For Centos - use yum:
-    sudo yum install python3
-
-  For Ubuntu - use apt-get:
-    sudo apt install python3
-
-```
-
-Install poetry
-
-```bash
-  python -m pip install poetry
 ```
     
 ## Run Locally
@@ -39,11 +26,21 @@ Go to the project directory
 ```bash
   cd django-training
 ```
+install Virtual Enviorentment
+```bash
+  pip -m venv env
+```
 
 Acitve Virtual Enviorentment
 
 ```bash
   env/Scripts/acitve
+```
+
+Install poetry
+
+```bash
+  python -m pip install poetry
 ```
 
 Install dependencies
