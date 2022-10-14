@@ -15,16 +15,12 @@ install Python
     
 ## Run Locally
 
-Clone django-training
-
-```bash
-  git clone https://github.com/3RB16/django-training-Task-1-Create-artist-model-and-album-model.git
-```
+Download ZIP django-training-Task-1-Create-artist-model-and-album-model
 
 Go to the project directory
 
 ```bash
-  cd django-training
+  cd django-training-Task-1-Create-artist-model-and-album-model
 ```
 install Virtual Enviorentment
 
