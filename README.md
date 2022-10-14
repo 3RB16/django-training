@@ -10,14 +10,7 @@ install Python
 
 ```bash
   For windows - Download latest version from the official website: 
-    https://www.python.org/downloads/
-
-  For Centos - use yum:
-    sudo yum install python3
-
-  For Ubuntu - use apt-get:
-    sudo apt install python3
-
+      https://www.python.org/downloads/
 ```
 
 Install poetry
