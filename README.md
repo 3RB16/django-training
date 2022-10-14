@@ -31,7 +31,7 @@ install Virtual Enviorentment
 Acitve Virtual Enviorentment
 
 ```bash
-  env/Scripts/acitve
+  env/Scripts/acitvate
 ```
 
 Install poetry
