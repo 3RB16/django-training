@@ -12,37 +12,38 @@ install Python
   For windows - Download latest version from the official website: 
       https://www.python.org/downloads/
 ```
+    
+## Run Locally
+```bash
+ Download ZIP django-training-Task-2-create-Django-Admin-and-Managers
+```
+Go to the project directory
+
+```bash
+  cd django-training-Task-2-create-Django-Admin-and-Managers
+```
+install Virtual Enviorentment
+
+```bash
+  python -m venv env
+```
+
+Acitve Virtual Enviorentment
+
+```bash
+  env/Scripts/acitvate
+```
 
 Install poetry
 
 ```bash
   python -m pip install poetry
 ```
-    
-## Run Locally
-
-Clone django-training
-
-```bash
-  git clone https://github.com/3RB16/django-training.git
-```
-
-Go to the project directory
-
-```bash
-  cd django-training
-```
-
-Acitve Vrtual Enviorentment
-
-```bash
-  env/Scripts/acitve
-```
 
 Install dependencies
 
 ```bash
-  poetry Install
+  poetry install
 ```
 
 Start the server
