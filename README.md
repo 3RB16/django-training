@@ -43,7 +43,7 @@ Install poetry
 Install dependencies
 
 ```bash
-  poetry Install
+  poetry install
 ```
 
 Start the server
