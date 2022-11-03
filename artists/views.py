@@ -9,8 +9,6 @@ from .serializers import ArtistSerializer
 from .models import Artist
 
 class ArtistView(APIView):
-    authentication_classes = [BasicAuthentication]
-    permission_classes = [IsAuthenticated]
 
     def get(self , request):
         serializer = ArtistSerializer(Artist.objects.all() , many = True)
