@@ -10,21 +10,17 @@ install Python
 
 ```bash
   For windows - Download latest version from the official website: 
-        https://www.python.org/downloads/
+      https://www.python.org/downloads/
 ```
     
 ## Run Locally
-
-Clone django-training
-
 ```bash
-  git clone https://github.com/3RB16/django-training.git
+ Download ZIP django-training-Task-2-create-Django-Admin-and-Managers
 ```
-
 Go to the project directory
 
 ```bash
-  cd django-training
+  cd django-training-Task-2-create-Django-Admin-and-Managers
 ```
 install Virtual Enviorentment
 
