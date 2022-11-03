@@ -5,10 +5,8 @@ from .permissions import IsAuthenticated,IsSuperUser
 from .serializers import RegisterUserSerializer ,GetUserSerializer
 from users.models import User
 from django.contrib.auth import authenticate, login ,logout
-from knox.views import LoginView as KnoxLoginView
-from knox.views import LogoutView as KnoxLogOutView
-from knox.models import AuthToken
 from knox.auth import TokenAuthentication
+from knox.auth import AuthToken
 
 class Register (APIView):
     permission_classes=[~IsAuthenticated | IsSuperUser]
@@ -18,14 +16,14 @@ class Register (APIView):
             return Response(serializer.errors , status=status.HTTP_400_BAD_REQUEST)
         
         User.objects.create_user(   
-            username=serializer.data["username"],
-            email=serializer.data["email"],
-            password=serializer.data["password1"]
+            username = serializer.data["username"],
+            email = serializer.data["email"],
+            password = serializer.data["password1"]
         )
         return Response({"message" : "user created successfully"} , status=status.HTTP_201_CREATED)
 
 
-class Login (KnoxLoginView):
+class Login (APIView):
     permission_classes=[~IsAuthenticated]
     def post (self,request):
         username = request.data.get('username')
@@ -34,8 +32,7 @@ class Login (KnoxLoginView):
         if user is not None:
             login(request, user)
             serializer = GetUserSerializer(user)
-            token_ttl = self.get_token_ttl()
-            instance, token = AuthToken.objects.create(user, token_ttl)
+            instance, token = AuthToken.objects.create(user)
             content = {
                 "token":token,
                 "user":serializer.data
@@ -44,7 +41,7 @@ class Login (KnoxLoginView):
         return Response({"message" : "invalid login" }, status=status.HTTP_400_BAD_REQUEST)
 
 
-class LogOut (KnoxLogOutView):
+class LogOut (APIView):
     authentication_classes = [TokenAuthentication]
     permission_classes=[IsAuthenticated]
     def post (self,request):
