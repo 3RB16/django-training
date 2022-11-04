@@ -32,7 +32,7 @@ class Login (APIView):
         if user is not None:
             login(request, user)
             serializer = GetUserSerializer(user)
-            instance, token = AuthToken.objects.create(user)
+            _, token = AuthToken.objects.create(user)
             content = {
                 "token":token,
                 "user":serializer.data
