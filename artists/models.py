@@ -7,7 +7,7 @@ class Artist(models.Model):
     
     @property
     def count_albums(self):
-        return self.album_set.filter(admin_approved = True).count()
+        return self.album_set.filter(is_approved = True).count()
 
     class Meta:
         db_table = 'artists'

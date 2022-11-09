@@ -13,7 +13,7 @@ class Album(models.Model):
     creation_date = models.DateTimeField(auto_now_add = True)
     release_date = models.DateTimeField(null = False, blank = False)
     cost = models.DecimalField(decimal_places = 2, max_digits = 18, blank = False, null = False)
-    admin_approved = models.BooleanField(default = False , help_text = " Approve the album if its name is not explicit")    
+    is_approved = models.BooleanField(default = False , help_text = " Approve the album if its name is not explicit")    
 
     class Meta:
         db_table = 'albums'
