@@ -3,6 +3,10 @@ from artists.models import Artist
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
 from django import forms
+from django.dispatch import receiver
+from django.utils.text import slugify
+from .tasks import send_mail_task
+from django.db.models.signals import post_save, pre_save
 
 from .validators import audio_file_validator
 
@@ -46,3 +50,15 @@ class Song (models.Model):
             super(Song, self).delete(*args, **kwargs)
         else:
             raise forms.ValidationError("Can't be deleted")
+
+@receiver(post_save, sender=Album)
+def album_post_save(sender, instance, created, *args, **kwargs):
+    if created:
+        send_mail_task.delay(instance.name, instance.artist.id)
+
+
+@receiver(pre_save, sender=Song)
+def song_pre_save(sender, instance, *args, **kwargs):
+    if len(instance.name.strip()) == 0:
+        instance.name = slugify(instance.album.name)
+
